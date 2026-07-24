@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-brand-script {
+    font-family: 'Pacifico', 'Dancing Script', cursive;
+  }
+  .font-heading {
+    font-family: 'Poppins', sans-serif;
+  }
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F3F4F6;
+  color: #22262E;
+}
