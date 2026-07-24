@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Logo } from './Logo';
-import { Phone, Search, ShieldCheck, ChevronDown, Package, Anchor, Plane, Truck, ArrowRight, Menu, X } from 'lucide-react';
+import { Phone, Search, ShieldCheck, ChevronDown, Package, Anchor, Plane, Truck, ArrowRight, Menu, X, Sun, Moon } from 'lucide-react';
 
 interface HeaderProps {
   onOpenTracking: (trackingNumber?: string) => void;
   onResetForm: () => void;
   activeSection: string;
   setActiveSection: (sec: string) => void;
+  isDarkMode?: boolean;
+  onToggleDarkMode?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -14,6 +16,8 @@ export const Header: React.FC<HeaderProps> = ({
   onResetForm,
   activeSection,
   setActiveSection,
+  isDarkMode = false,
+  onToggleDarkMode,
 }) => {
   const [quickTrackInput, setQuickTrackInput] = useState('');
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -143,20 +147,36 @@ export const Header: React.FC<HeaderProps> = ({
               placeholder="Track number e.g. KL-892410"
               value={quickTrackInput}
               onChange={(e) => setQuickTrackInput(e.target.value)}
-              className="w-48 xl:w-56 pl-3 pr-8 py-1.5 text-xs rounded-lg border border-gray-300 bg-gray-50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-[#152A4E] transition-all"
+              className="w-44 xl:w-52 pl-3 pr-8 py-1.5 text-xs rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-50 dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-900 focus:outline-hidden focus:ring-2 focus:ring-[#152A4E] transition-all"
             />
             <button
               type="submit"
-              className="absolute right-1 top-1/2 -translate-y-1/2 p-1 text-gray-500 hover:text-[#152A4E]"
+              className="absolute right-1 top-1/2 -translate-y-1/2 p-1 text-gray-500 dark:text-gray-400 hover:text-[#152A4E] dark:hover:text-sky-300"
               title="Quick Search"
             >
               <Search className="w-3.5 h-3.5" />
             </button>
           </form>
 
+          {/* Dark Mode Toggle Button */}
+          {onToggleDarkMode && (
+            <button
+              onClick={onToggleDarkMode}
+              className="p-2 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors flex items-center justify-center cursor-pointer"
+              title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              aria-label="Toggle theme"
+            >
+              {isDarkMode ? (
+                <Sun className="w-4 h-4 text-amber-400" />
+              ) : (
+                <Moon className="w-4 h-4 text-[#152A4E]" />
+              )}
+            </button>
+          )}
+
           <button
             onClick={() => { onResetForm(); setActiveSection('book'); }}
-            className="bg-[#152A4E] hover:bg-[#1D4F91] text-white px-4 py-2 rounded-xl text-xs font-semibold shadow-xs transition-all flex items-center gap-1.5"
+            className="bg-[#152A4E] dark:bg-sky-600 hover:bg-[#1D4F91] dark:hover:bg-sky-500 text-white px-4 py-2 rounded-xl text-xs font-semibold shadow-xs transition-all flex items-center gap-1.5 cursor-pointer"
           >
             Book Shipment
             <ArrowRight className="w-3.5 h-3.5" />
@@ -165,9 +185,18 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-2 lg:hidden">
+          {onToggleDarkMode && (
+            <button
+              onClick={onToggleDarkMode}
+              className="p-2 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800"
+              title={isDarkMode ? "Light Mode" : "Dark Mode"}
+            >
+              {isDarkMode ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-[#152A4E]" />}
+            </button>
+          )}
           <button
             onClick={() => onOpenTracking()}
-            className="p-2 text-[#152A4E] hover:bg-sky-50 rounded-lg"
+            className="p-2 text-[#152A4E] dark:text-sky-300 hover:bg-sky-50 dark:hover:bg-slate-800 rounded-lg"
             title="Track"
           >
             <Search className="w-5 h-5" />

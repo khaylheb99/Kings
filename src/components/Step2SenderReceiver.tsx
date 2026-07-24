@@ -70,28 +70,28 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
       
       {/* Step Header */}
       <div>
-        <span className="text-xs font-bold uppercase tracking-wider text-[#1D4F91]">
+        <span className="text-xs font-bold uppercase tracking-wider text-[#1D4F91] dark:text-sky-400">
           Step 2 of 3
         </span>
-        <h2 className="font-heading font-extrabold text-2xl text-[#152A4E]">
+        <h2 className="font-heading font-extrabold text-2xl text-[#152A4E] dark:text-white">
           Sender & Receiver Details
         </h2>
-        <p className="text-sm text-gray-600 mt-1">
+        <p className="text-sm text-gray-600 dark:text-slate-300 mt-1">
           Provide accurate contact and address details so our pickup team and destination drivers can reach both parties without delay.
         </p>
       </div>
 
       {/* SENDER SECTION */}
-      <div className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-200 shadow-2xs space-y-4">
-        <div className="flex items-center gap-2 border-b border-gray-100 pb-3">
-          <div className="p-2 rounded-xl bg-sky-100 text-[#152A4E]">
+      <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 sm:p-5 border border-gray-200 dark:border-slate-700 shadow-2xs space-y-4">
+        <div className="flex items-center gap-2 border-b border-gray-100 dark:border-slate-700 pb-3">
+          <div className="p-2 rounded-xl bg-sky-100 dark:bg-sky-950/60 text-[#152A4E] dark:text-sky-300">
             <User className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="font-heading font-bold text-base text-[#152A4E]">
+            <h3 className="font-heading font-bold text-base text-[#152A4E] dark:text-slate-100">
               Sender Information ({isUsaToNg ? 'USA Pickup' : 'Nigeria Origin'})
             </h3>
-            <span className="text-xs text-gray-500">Person or business dispatching the shipment</span>
+            <span className="text-xs text-gray-500 dark:text-slate-400">Person or business dispatching the shipment</span>
           </div>
         </div>
 
@@ -99,68 +99,68 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
           
           {/* Full Name */}
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-[#152A4E]">
+            <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
               Full Name <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <User className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <User className="w-4 h-4 text-gray-400 dark:text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={formData.sender.fullName}
                 onChange={(e) => updateSender({ fullName: e.target.value })}
                 placeholder="e.g. David Adebayo"
-                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-[#152A4E]"
+                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-[#152A4E]"
               />
             </div>
           </div>
 
           {/* Company Name */}
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-[#152A4E]">
-              Company Name <span className="text-gray-400 font-normal">(Optional)</span>
+            <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
+              Company Name <span className="text-gray-400 dark:text-slate-500 font-normal">(Optional)</span>
             </label>
             <div className="relative">
-              <Building className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Building className="w-4 h-4 text-gray-400 dark:text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={formData.sender.companyName || ''}
                 onChange={(e) => updateSender({ companyName: e.target.value })}
                 placeholder="e.g. Texas Freight LLC"
-                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-[#152A4E]"
+                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-[#152A4E]"
               />
             </div>
           </div>
 
           {/* Phone Number */}
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-[#152A4E]">
+            <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
               Phone Number <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <Phone className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Phone className="w-4 h-4 text-gray-400 dark:text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="tel"
                 value={formData.sender.phone}
                 onChange={(e) => updateSender({ phone: e.target.value })}
                 placeholder={isUsaToNg ? "+1 (832) 555-0192" : "+234 803 123 4567"}
-                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-[#152A4E]"
+                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-[#152A4E]"
               />
             </div>
           </div>
 
           {/* Email Address */}
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-[#152A4E]">
+            <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
               Email Address <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <Mail className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Mail className="w-4 h-4 text-gray-400 dark:text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="email"
                 value={formData.sender.email}
                 onChange={(e) => updateSender({ email: e.target.value })}
                 placeholder="david.adebayo@example.com"
-                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-[#152A4E]"
+                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-[#152A4E]"
               />
             </div>
           </div>
@@ -168,19 +168,19 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
         </div>
 
         {/* Sender Address */}
-        <div className="pt-2 border-t border-gray-100 space-y-3">
+        <div className="pt-2 border-t border-gray-100 dark:border-slate-700 space-y-3">
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-[#152A4E]">
+            <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
               Street Pickup Address <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <MapPin className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <MapPin className="w-4 h-4 text-gray-400 dark:text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={formData.sender.address.street}
                 onChange={(e) => updateSenderAddress({ street: e.target.value })}
                 placeholder="e.g. 8900 Southwest Fwy, Suite 102"
-                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-[#152A4E]"
+                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-[#152A4E]"
               />
             </div>
           </div>
@@ -189,14 +189,14 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
             
             {/* City */}
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-[#152A4E]">
+              <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
                 City <span className="text-red-500">*</span>
               </label>
               {isUsaToNg ? (
                 <select
                   value={formData.sender.address.city}
                   onChange={(e) => updateSenderAddress({ city: e.target.value })}
-                  className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white"
+                  className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100"
                 >
                   {TEXAS_CITIES.map((c) => (
                     <option key={c} value={c}>
@@ -211,14 +211,14 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
                   value={formData.sender.address.city}
                   onChange={(e) => updateSenderAddress({ city: e.target.value })}
                   placeholder="Lagos / Port Harcourt"
-                  className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white"
+                  className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100"
                 />
               )}
             </div>
 
             {/* State */}
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-[#152A4E]">
+              <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
                 State / Region <span className="text-red-500">*</span>
               </label>
               <input
@@ -226,13 +226,13 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
                 value={formData.sender.address.state}
                 onChange={(e) => updateSenderAddress({ state: e.target.value })}
                 placeholder={isUsaToNg ? "Texas" : "Lagos State"}
-                className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white"
+                className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100"
               />
             </div>
 
             {/* ZIP / Postal Code */}
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-[#152A4E]">
+              <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
                 ZIP / Postal Code
               </label>
               <input
@@ -240,7 +240,7 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
                 value={formData.sender.address.zipCode}
                 onChange={(e) => updateSenderAddress({ zipCode: e.target.value })}
                 placeholder="77074"
-                className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white"
+                className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100"
               />
             </div>
 
@@ -249,30 +249,30 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
           {/* Pickup Window */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-[#152A4E]">
+              <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
                 Preferred Pickup Date
               </label>
               <div className="relative">
-                <Calendar className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Calendar className="w-4 h-4 text-gray-400 dark:text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="date"
                   value={formData.sender.preferredPickupDate}
                   onChange={(e) => updateSender({ preferredPickupDate: e.target.value })}
-                  className="w-full pl-9 pr-3 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white"
+                  className="w-full pl-9 pr-3 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100"
                 />
               </div>
             </div>
 
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-[#152A4E]">
+              <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
                 Pickup Time Window
               </label>
               <div className="relative">
-                <Clock className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Clock className="w-4 h-4 text-gray-400 dark:text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
                 <select
                   value={formData.sender.pickupTimeWindow}
                   onChange={(e) => updateSender({ pickupTimeWindow: e.target.value })}
-                  className="w-full pl-9 pr-3 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white"
+                  className="w-full pl-9 pr-3 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100"
                 >
                   <option value="Morning (8am - 12pm)">Morning (8am - 12pm)</option>
                   <option value="Afternoon (12pm - 5pm)">Afternoon (12pm - 5pm)</option>
@@ -286,16 +286,16 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
       </div>
 
       {/* RECEIVER SECTION */}
-      <div className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-200 shadow-2xs space-y-4">
-        <div className="flex items-center gap-2 border-b border-gray-100 pb-3">
-          <div className="p-2 rounded-xl bg-emerald-100 text-[#2FAE60]">
+      <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 sm:p-5 border border-gray-200 dark:border-slate-700 shadow-2xs space-y-4">
+        <div className="flex items-center gap-2 border-b border-gray-100 dark:border-slate-700 pb-3">
+          <div className="p-2 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-[#2FAE60]">
             <MapPin className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="font-heading font-bold text-base text-[#152A4E]">
+            <h3 className="font-heading font-bold text-base text-[#152A4E] dark:text-slate-100">
               Receiver Information ({isUsaToNg ? 'Nigeria Destination' : 'USA Address'})
             </h3>
-            <span className="text-xs text-gray-500">Recipient taking delivery of the goods</span>
+            <span className="text-xs text-gray-500 dark:text-slate-400">Recipient taking delivery of the goods</span>
           </div>
         </div>
 
@@ -303,64 +303,64 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
           
           {/* Full Name */}
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-[#152A4E]">
+            <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
               Receiver Full Name <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <User className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <User className="w-4 h-4 text-gray-400 dark:text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={formData.receiver.fullName}
                 onChange={(e) => updateReceiver({ fullName: e.target.value })}
                 placeholder="e.g. Blessing Adebayo"
-                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-[#152A4E]"
+                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-[#152A4E]"
               />
             </div>
           </div>
 
           {/* Phone Number */}
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-[#152A4E]">
+            <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
               Receiver Phone Number <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <Phone className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Phone className="w-4 h-4 text-gray-400 dark:text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="tel"
                 value={formData.receiver.phone}
                 onChange={(e) => updateReceiver({ phone: e.target.value })}
                 placeholder={isUsaToNg ? "+234 803 123 4567" : "+1 (832) 555-0192"}
-                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-[#152A4E]"
+                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-[#152A4E]"
               />
             </div>
           </div>
 
           {/* Email Address */}
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-[#152A4E]">
+            <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
               Receiver Email Address <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <Mail className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Mail className="w-4 h-4 text-gray-400 dark:text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="email"
                 value={formData.receiver.email}
                 onChange={(e) => updateReceiver({ email: e.target.value })}
                 placeholder="blessing.a@example.com"
-                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-[#152A4E]"
+                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-[#152A4E]"
               />
             </div>
           </div>
 
           {/* Relationship to Sender */}
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-[#152A4E]">
+            <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
               Relationship to Sender
             </label>
             <select
               value={formData.receiver.relationship || 'Family'}
               onChange={(e) => updateReceiver({ relationship: e.target.value })}
-              className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white"
+              className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100"
             >
               <option value="Family">Family Member</option>
               <option value="Business">Business Client / Partner</option>
@@ -373,19 +373,19 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
         </div>
 
         {/* Receiver Delivery Address */}
-        <div className="pt-2 border-t border-gray-100 space-y-3">
+        <div className="pt-2 border-t border-gray-100 dark:border-slate-700 space-y-3">
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-[#152A4E]">
+            <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
               Street Delivery Address <span className="text-red-500">*</span>
             </label>
             <div className="relative">
-              <MapPin className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <MapPin className="w-4 h-4 text-gray-400 dark:text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={formData.receiver.address.street}
                 onChange={(e) => updateReceiverAddress({ street: e.target.value })}
                 placeholder="e.g. 14 Allen Avenue, Ikeja"
-                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-[#152A4E]"
+                className="w-full pl-9 pr-3.5 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-[#152A4E]"
               />
             </div>
           </div>
@@ -394,7 +394,7 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
             
             {/* City */}
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-[#152A4E]">
+              <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
                 City / Town <span className="text-red-500">*</span>
               </label>
               <input
@@ -402,20 +402,20 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
                 value={formData.receiver.address.city}
                 onChange={(e) => updateReceiverAddress({ city: e.target.value })}
                 placeholder="Ikeja / Lekki / Victoria Island"
-                className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white"
+                className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100"
               />
             </div>
 
             {/* State/Region Dropdown for Nigeria */}
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-[#152A4E]">
+              <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
                 State / Region <span className="text-red-500">*</span>
               </label>
               {isUsaToNg ? (
                 <select
                   value={formData.receiver.address.state}
                   onChange={(e) => updateReceiverAddress({ state: e.target.value })}
-                  className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white"
+                  className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100"
                 >
                   {NIGERIAN_STATES.map((st) => (
                     <option key={st} value={st}>
@@ -429,21 +429,21 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
                   value={formData.receiver.address.state}
                   onChange={(e) => updateReceiverAddress({ state: e.target.value })}
                   placeholder="Texas"
-                  className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white"
+                  className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100"
                 />
               )}
             </div>
 
             {/* Country */}
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-[#152A4E]">
+              <label className="block text-xs font-bold text-[#152A4E] dark:text-sky-200">
                 Country
               </label>
               <input
                 type="text"
                 disabled
                 value={isUsaToNg ? 'Nigeria' : 'USA'}
-                className="w-full px-3 py-2 text-sm font-semibold rounded-xl border border-gray-200 bg-gray-100 text-gray-700"
+                className="w-full px-3 py-2 text-sm font-semibold rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-slate-300"
               />
             </div>
 
@@ -452,65 +452,65 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
       </div>
 
       {/* ID & CUSTOMS DECLARATION SECTION */}
-      <div className="bg-sky-50/60 rounded-2xl p-4 sm:p-5 border border-sky-200 space-y-4">
+      <div className="bg-sky-50/60 dark:bg-slate-900/60 rounded-2xl p-4 sm:p-5 border border-sky-200 dark:border-slate-700 space-y-4">
         <div className="flex items-center gap-2">
-          <ShieldAlert className="w-5 h-5 text-[#152A4E]" />
+          <ShieldAlert className="w-5 h-5 text-[#152A4E] dark:text-sky-300" />
           <div>
-            <h3 className="font-heading font-bold text-sm text-[#152A4E]">
+            <h3 className="font-heading font-bold text-sm text-[#152A4E] dark:text-sky-200">
               Customs Clearance & Identification Info
             </h3>
-            <span className="text-xs text-gray-500">Required by US Customs & Border Protection and Nigeria Customs Service</span>
+            <span className="text-xs text-gray-500 dark:text-slate-400">Required by US Customs & Border Protection and Nigeria Customs Service</span>
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-1">
-            <label className="block text-xs font-semibold text-[#152A4E]">
-              Sender ID / Driver License No. <span className="text-gray-400">(Optional)</span>
+            <label className="block text-xs font-semibold text-[#152A4E] dark:text-sky-200">
+              Sender ID / Driver License No. <span className="text-gray-400 dark:text-slate-500">(Optional)</span>
             </label>
             <input
               type="text"
               value={formData.sender.senderIdNumber || ''}
               onChange={(e) => updateSender({ senderIdNumber: e.target.value })}
               placeholder="e.g. TX-98402120"
-              className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white"
+              className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100"
             />
           </div>
 
           <div className="space-y-1">
-            <label className="block text-xs font-semibold text-[#152A4E]">
-              Receiver ID / BVN / NIN <span className="text-gray-400">(Required for items &gt; $2,500)</span>
+            <label className="block text-xs font-semibold text-[#152A4E] dark:text-sky-200">
+              Receiver ID / BVN / NIN <span className="text-gray-400 dark:text-slate-500">(Required for items &gt; $2,500)</span>
             </label>
             <input
               type="text"
               value={formData.receiver.receiverIdOrBvn || ''}
               onChange={(e) => updateReceiver({ receiverIdOrBvn: e.target.value })}
               placeholder="e.g. NIN or BVN 2223019280"
-              className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 bg-white"
+              className="w-full px-3 py-2 text-sm font-medium rounded-xl border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-slate-100"
             />
           </div>
         </div>
 
         {/* Customs Confirmation Checkbox */}
-        <label className="flex items-start gap-3 p-3 rounded-xl bg-white border border-sky-200 cursor-pointer hover:border-[#152A4E] transition-colors">
+        <label className="flex items-start gap-3 p-3 rounded-xl bg-white dark:bg-slate-800 border border-sky-200 dark:border-slate-700 cursor-pointer hover:border-[#152A4E] dark:hover:border-sky-400 transition-colors">
           <input
             type="checkbox"
             checked={formData.customsConfirmed}
             onChange={(e) => updateFormData({ customsConfirmed: e.target.checked })}
             className="mt-1 rounded-xs text-[#152A4E] focus:ring-[#152A4E] w-4 h-4"
           />
-          <span className="text-xs text-gray-700 leading-snug">
-            <strong className="text-[#152A4E]">Customs Compliance Declaration:</strong> I confirm that all listed contents comply with USA export and Nigerian import regulations, and do not contain cash, weapons, narcotics, counterfeit goods, or unapproved contraband.
+          <span className="text-xs text-gray-700 dark:text-slate-300 leading-snug">
+            <strong className="text-[#152A4E] dark:text-sky-300">Customs Compliance Declaration:</strong> I confirm that all listed contents comply with USA export and Nigerian import regulations, and do not contain cash, weapons, narcotics, counterfeit goods, or unapproved contraband.
           </span>
         </label>
       </div>
 
       {/* Bottom Action Bar */}
-      <div className="pt-4 border-t border-gray-200 flex items-center justify-between">
+      <div className="pt-4 border-t border-gray-200 dark:border-slate-700 flex items-center justify-between">
         <button
           type="button"
           onClick={onBack}
-          className="px-5 py-2.5 rounded-xl border border-gray-300 text-gray-700 font-heading font-semibold text-xs sm:text-sm hover:bg-gray-100 transition-all flex items-center gap-1.5 cursor-pointer"
+          className="px-5 py-2.5 rounded-xl border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-slate-200 font-heading font-semibold text-xs sm:text-sm hover:bg-gray-100 dark:hover:bg-slate-800 transition-all flex items-center gap-1.5 cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back: Cargo Details</span>
@@ -522,8 +522,8 @@ export const Step2SenderReceiver: React.FC<Step2Props> = ({
           onClick={onNext}
           className={`px-8 py-3 rounded-xl font-heading font-bold text-sm transition-all flex items-center gap-2 cursor-pointer shadow-sm ${
             isFormValid
-              ? 'bg-[#152A4E] hover:bg-[#1D4F91] text-white active:scale-98'
-              : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+              ? 'bg-[#152A4E] dark:bg-sky-600 hover:bg-[#1D4F91] dark:hover:bg-sky-500 text-white active:scale-98'
+              : 'bg-gray-200 dark:bg-slate-700 text-gray-400 dark:text-slate-500 cursor-not-allowed'
           }`}
         >
           <span>Next Step: Service & Payment</span>

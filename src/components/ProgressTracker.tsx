@@ -34,13 +34,13 @@ export const ProgressTracker: React.FC<ProgressTrackerProps> = ({
   ];
 
   return (
-    <div className="w-full bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-200/80 mb-6">
+    <div className="w-full bg-white dark:bg-slate-800 rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-200/80 dark:border-slate-700 mb-6 transition-colors">
       <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
         
         {/* Background Connecting Line (Desktop) */}
-        <div className="hidden sm:block absolute top-1/2 left-12 right-12 h-1 bg-gray-200 -translate-y-1/2 z-0">
+        <div className="hidden sm:block absolute top-1/2 left-12 right-12 h-1 bg-gray-200 dark:bg-slate-700 -translate-y-1/2 z-0">
           <div
-            className="h-full bg-gradient-to-r from-[#152A4E] to-[#1D4F91] transition-all duration-300"
+            className="h-full bg-gradient-to-r from-[#152A4E] dark:from-sky-500 to-[#1D4F91] dark:to-sky-400 transition-all duration-300"
             style={{
               width: `${((currentStep - 1) / (totalSteps - 1)) * 100}%`,
             }}
@@ -71,8 +71,8 @@ export const ProgressTracker: React.FC<ProgressTrackerProps> = ({
                   isCompleted
                     ? 'bg-[#2FAE60] text-white shadow-emerald-200'
                     : isActive
-                    ? 'bg-[#152A4E] text-white ring-4 ring-[#BFE3F7]'
-                    : 'bg-gray-100 text-gray-500 border border-gray-200'
+                    ? 'bg-[#152A4E] dark:bg-sky-500 text-white ring-4 ring-[#BFE3F7] dark:ring-sky-900/60'
+                    : 'bg-gray-100 dark:bg-slate-700 text-gray-500 dark:text-slate-400 border border-gray-200 dark:border-slate-600'
                 }`}
               >
                 {isCompleted ? (
@@ -87,10 +87,10 @@ export const ProgressTracker: React.FC<ProgressTrackerProps> = ({
                 <span
                   className={`text-xs uppercase tracking-wider font-bold ${
                     isActive
-                      ? 'text-[#1D4F91]'
+                      ? 'text-[#1D4F91] dark:text-sky-400'
                       : isCompleted
                       ? 'text-[#2FAE60]'
-                      : 'text-gray-400'
+                      : 'text-gray-400 dark:text-slate-500'
                   }`}
                 >
                   Step 0{step.number}
@@ -98,22 +98,22 @@ export const ProgressTracker: React.FC<ProgressTrackerProps> = ({
                 <span
                   className={`font-heading font-bold text-sm sm:text-base leading-tight ${
                     isActive
-                      ? 'text-[#152A4E]'
+                      ? 'text-[#152A4E] dark:text-white'
                       : isCompleted
-                      ? 'text-gray-800'
-                      : 'text-gray-500'
+                      ? 'text-gray-800 dark:text-slate-200'
+                      : 'text-gray-500 dark:text-slate-400'
                   }`}
                 >
                   {step.title}
                 </span>
-                <span className="text-xs text-gray-500 hidden md:inline font-normal">
+                <span className="text-xs text-gray-500 dark:text-slate-400 hidden md:inline font-normal">
                   {step.subtitle}
                 </span>
               </div>
 
               {/* Active Step Indicator Underline for Mobile */}
               {isActive && (
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#152A4E] rounded-full sm:hidden"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#152A4E] dark:bg-sky-400 rounded-full sm:hidden"></div>
               )}
             </div>
           );

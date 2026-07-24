@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BookingFormData, ShipmentRecord } from './types';
 import { DEFAULT_BOOKING_DATA, calculateShippingRates } from './data/constants';
 import { Header } from './components/Header';
@@ -21,6 +21,25 @@ export default function App() {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [bookingRef, setBookingRef] = useState<string>('');
   const [isBookingSubmitted, setIsBookingSubmitted] = useState<boolean>(false);
+
+  // Dark Mode state
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    return localStorage.getItem('kingz_theme') === 'dark';
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('kingz_theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('kingz_theme', 'light');
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
+  };
 
   // Active view section
   const [activeSection, setActiveSection] = useState<'book' | 'resources'>('book');
@@ -131,7 +150,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F3F4F6] font-body text-[#22262E] antialiased selection:bg-[#BFE3F7] selection:text-[#152A4E]">
+    <div className="min-h-screen flex flex-col bg-[#F3F4F6] dark:bg-slate-900 font-body text-[#22262E] dark:text-slate-100 antialiased selection:bg-[#BFE3F7] selection:text-[#152A4E]">
       
       {/* App Header */}
       <Header
@@ -139,6 +158,8 @@ export default function App() {
         onResetForm={handleResetForm}
         activeSection={activeSection}
         setActiveSection={setActiveSection}
+        isDarkMode={isDarkMode}
+        onToggleDarkMode={toggleDarkMode}
       />
 
       {/* Hero Strip Section */}
@@ -179,7 +200,7 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
               
               {/* Left Column: Form Step Card (White Card with 16px radius) */}
-              <div className="lg:col-span-7 bg-white rounded-2xl p-5 sm:p-8 shadow-xs border border-gray-200/90">
+              <div className="lg:col-span-7 bg-white dark:bg-slate-800 rounded-2xl p-5 sm:p-8 shadow-xs border border-gray-200/90 dark:border-slate-700">
                 {currentStep === 1 && (
                   <Step1ShipmentDetails
                     formData={formData}

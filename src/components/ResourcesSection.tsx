@@ -10,58 +10,58 @@ export const ResourcesSection: React.FC<ResourcesSectionProps> = ({ onStartBooki
     <div className="max-w-5xl mx-auto space-y-8 py-4 animate-in fade-in duration-200">
       
       {/* Hero Callout Header */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-xs space-y-4">
-        <div className="inline-flex items-center gap-2 bg-sky-100 text-[#152A4E] text-xs font-bold px-3 py-1 rounded-full">
+      <div className="bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-8 border border-gray-200 dark:border-slate-700 shadow-xs space-y-4">
+        <div className="inline-flex items-center gap-2 bg-sky-100 dark:bg-sky-950/60 text-[#152A4E] dark:text-sky-300 text-xs font-bold px-3 py-1 rounded-full">
           <ShieldCheck className="w-4 h-4 text-[#2FAE60]" />
           <span>You Deserve A Shipping Provider You Can Trust</span>
         </div>
 
-        <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#152A4E]">
+        <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#152A4E] dark:text-white">
           Why Texas & Nigerian Businesses Choose Kingz Logistics
         </h2>
 
-        <p className="text-sm text-gray-600 leading-relaxed max-w-3xl">
+        <p className="text-sm text-gray-600 dark:text-slate-300 leading-relaxed max-w-3xl">
           Shipping across oceans shouldn't be stressful. We counter the distrust common in West African freight logistics by guaranteeing transparent pricing, careful handling, zero hidden charges, and direct communication from our Texas and Lagos dispatch centers.
         </p>
 
         {/* 4 Core Principles */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
-          <div className="p-4 bg-sky-50/60 rounded-2xl border border-sky-100 space-y-1.5">
-            <div className="w-8 h-8 rounded-xl bg-[#152A4E] text-white flex items-center justify-center font-bold text-xs">
+          <div className="p-4 bg-sky-50/60 dark:bg-slate-900/60 rounded-2xl border border-sky-100 dark:border-slate-700 space-y-1.5">
+            <div className="w-8 h-8 rounded-xl bg-[#152A4E] dark:bg-sky-600 text-white flex items-center justify-center font-bold text-xs">
               01
             </div>
-            <h4 className="font-heading font-bold text-sm text-[#152A4E]">On-Time Delivery</h4>
-            <p className="text-xs text-gray-500 leading-snug">
+            <h4 className="font-heading font-bold text-sm text-[#152A4E] dark:text-slate-100">On-Time Delivery</h4>
+            <p className="text-xs text-gray-500 dark:text-slate-400 leading-snug">
               Direct vessel & flight schedules from Houston and Lagos without unnecessary delays.
             </p>
           </div>
 
-          <div className="p-4 bg-sky-50/60 rounded-2xl border border-sky-100 space-y-1.5">
-            <div className="w-8 h-8 rounded-xl bg-[#152A4E] text-white flex items-center justify-center font-bold text-xs">
+          <div className="p-4 bg-sky-50/60 dark:bg-slate-900/60 rounded-2xl border border-sky-100 dark:border-slate-700 space-y-1.5">
+            <div className="w-8 h-8 rounded-xl bg-[#152A4E] dark:bg-sky-600 text-white flex items-center justify-center font-bold text-xs">
               02
             </div>
-            <h4 className="font-heading font-bold text-sm text-[#152A4E]">Careful Handling</h4>
-            <p className="text-xs text-gray-500 leading-snug">
+            <h4 className="font-heading font-bold text-sm text-[#152A4E] dark:text-slate-100">Careful Handling</h4>
+            <p className="text-xs text-gray-500 dark:text-slate-400 leading-snug">
               Rigid protective crating and trained loaders prevent damage to fragile or high-value items.
             </p>
           </div>
 
-          <div className="p-4 bg-sky-50/60 rounded-2xl border border-sky-100 space-y-1.5">
-            <div className="w-8 h-8 rounded-xl bg-[#152A4E] text-white flex items-center justify-center font-bold text-xs">
+          <div className="p-4 bg-sky-50/60 dark:bg-slate-900/60 rounded-2xl border border-sky-100 dark:border-slate-700 space-y-1.5">
+            <div className="w-8 h-8 rounded-xl bg-[#152A4E] dark:bg-sky-600 text-white flex items-center justify-center font-bold text-xs">
               03
             </div>
-            <h4 className="font-heading font-bold text-sm text-[#152A4E]">Real-Time Updates</h4>
-            <p className="text-xs text-gray-500 leading-snug">
+            <h4 className="font-heading font-bold text-sm text-[#152A4E] dark:text-slate-100">Real-Time Updates</h4>
+            <p className="text-xs text-gray-500 dark:text-slate-400 leading-snug">
               Tracking codes and WhatsApp milestone notifications at every stage of transit.
             </p>
           </div>
 
-          <div className="p-4 bg-sky-50/60 rounded-2xl border border-sky-100 space-y-1.5">
-            <div className="w-8 h-8 rounded-xl bg-[#152A4E] text-white flex items-center justify-center font-bold text-xs">
+          <div className="p-4 bg-sky-50/60 dark:bg-slate-900/60 rounded-2xl border border-sky-100 dark:border-slate-700 space-y-1.5">
+            <div className="w-8 h-8 rounded-xl bg-[#152A4E] dark:bg-sky-600 text-white flex items-center justify-center font-bold text-xs">
               04
             </div>
-            <h4 className="font-heading font-bold text-sm text-[#152A4E]">Clear Communication</h4>
-            <p className="text-xs text-gray-500 leading-snug">
+            <h4 className="font-heading font-bold text-sm text-[#152A4E] dark:text-slate-100">Clear Communication</h4>
+            <p className="text-xs text-gray-500 dark:text-slate-400 leading-snug">
               Dedicated Houston desk officers available to speak directly with you by phone or WhatsApp.
             </p>
           </div>
@@ -72,13 +72,13 @@ export const ResourcesSection: React.FC<ResourcesSectionProps> = ({ onStartBooki
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {/* Customs Requirements */}
-        <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-xs space-y-3">
-          <h3 className="font-heading font-bold text-lg text-[#152A4E] flex items-center gap-2">
-            <FileText className="w-5 h-5 text-[#1D4F91]" />
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-slate-700 shadow-xs space-y-3">
+          <h3 className="font-heading font-bold text-lg text-[#152A4E] dark:text-white flex items-center gap-2">
+            <FileText className="w-5 h-5 text-[#1D4F91] dark:text-sky-400" />
             USA ↔ Nigeria Customs Regulations
           </h3>
 
-          <ul className="space-y-2 text-xs text-gray-700">
+          <ul className="space-y-2 text-xs text-gray-700 dark:text-slate-300">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-[#2FAE60] shrink-0 mt-0.5" />
               <span><strong>Commercial Cargo:</strong> Requires commercial invoice, packing list, and Form M / PAAR for Nigeria imports above $5,000 value.</span>
@@ -95,23 +95,23 @@ export const ResourcesSection: React.FC<ResourcesSectionProps> = ({ onStartBooki
         </div>
 
         {/* Prohibited Items */}
-        <div className="bg-amber-50/70 rounded-2xl p-6 border border-amber-200 space-y-3">
-          <h3 className="font-heading font-bold text-lg text-amber-900 flex items-center gap-2">
-            <AlertCircle className="w-5 h-5 text-amber-600" />
+        <div className="bg-amber-50/70 dark:bg-amber-950/30 rounded-2xl p-6 border border-amber-200 dark:border-amber-800 space-y-3">
+          <h3 className="font-heading font-bold text-lg text-amber-900 dark:text-amber-300 flex items-center gap-2">
+            <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400" />
             Restricted & Prohibited Items
           </h3>
 
-          <p className="text-xs text-amber-900/80">
+          <p className="text-xs text-amber-900/80 dark:text-amber-200/80">
             To ensure zero delays or confiscation by maritime or customs authorities, the following items cannot be shipped in regular containers:
           </p>
 
-          <div className="grid grid-cols-2 gap-2 text-xs text-amber-950 font-medium">
-            <div className="bg-white/80 p-2 rounded-lg border border-amber-200">❌ Firearms & Munitions</div>
-            <div className="bg-white/80 p-2 rounded-lg border border-amber-200">❌ Unlabeled Chemicals</div>
-            <div className="bg-white/80 p-2 rounded-lg border border-amber-200">❌ Cash & Banknotes</div>
-            <div className="bg-white/80 p-2 rounded-lg border border-amber-200">❌ Illegal Substances</div>
-            <div className="bg-white/80 p-2 rounded-lg border border-amber-200">❌ Explosives / Fireworks</div>
-            <div className="bg-white/80 p-2 rounded-lg border border-amber-200">❌ Counterfeit Currencies</div>
+          <div className="grid grid-cols-2 gap-2 text-xs text-amber-950 dark:text-amber-100 font-medium">
+            <div className="bg-white/80 dark:bg-slate-800/80 p-2 rounded-lg border border-amber-200 dark:border-amber-800">❌ Firearms & Munitions</div>
+            <div className="bg-white/80 dark:bg-slate-800/80 p-2 rounded-lg border border-amber-200 dark:border-amber-800">❌ Unlabeled Chemicals</div>
+            <div className="bg-white/80 dark:bg-slate-800/80 p-2 rounded-lg border border-amber-200 dark:border-amber-800">❌ Cash & Banknotes</div>
+            <div className="bg-white/80 dark:bg-slate-800/80 p-2 rounded-lg border border-amber-200 dark:border-amber-800">❌ Illegal Substances</div>
+            <div className="bg-white/80 dark:bg-slate-800/80 p-2 rounded-lg border border-amber-200 dark:border-amber-800">❌ Explosives / Fireworks</div>
+            <div className="bg-white/80 dark:bg-slate-800/80 p-2 rounded-lg border border-amber-200 dark:border-amber-800">❌ Counterfeit Currencies</div>
           </div>
         </div>
 
